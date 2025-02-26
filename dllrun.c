@@ -26,5 +26,7 @@ int main(){
 	}
  	printf("5+4=%d\n",add(5,4));
 
+ 	FreeLibrary(hDll);
+
 	return 0;
 }
