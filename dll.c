@@ -14,10 +14,10 @@ BOOL WINAPI DllMain(
 }
 
 
-__declspec(dllexport) void testPrint(void){
+__declspec(dllexport) void __cdecl testPrint(void){
 	printf("hewwo! you called the testPrint! UWU\n");
 }
 
-__declspec(dllexport) int add(int a, int b){
+__declspec(dllexport) int __cdecl add(int a, int b){
 	return a + b;
 }

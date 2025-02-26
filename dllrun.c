@@ -10,7 +10,7 @@ int main(){
 		return 1;
 	}
 
-	typedef void(*testFunc)(void);
+	typedef void(__cdecl *testFunc)(void);
  	testFunc func = (testFunc)GetProcAddress(hDll, "testPrint");
  	if(func == NULL){
 		printf("error loading testPrint from DLL!");
@@ -18,7 +18,7 @@ int main(){
 	}
 	func();
 
- 	typedef int(*testFunc2)(int,int);
+ 	typedef int(__cdecl *testFunc2)(int,int);
  	testFunc2 add = (testFunc2)GetProcAddress(hDll, "add");
  	if(add == NULL){
 		printf("error loading add from DLL!");
