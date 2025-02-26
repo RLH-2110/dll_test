@@ -2,12 +2,12 @@
 all: dllrun.exe dll.dll tempProj.exe
 
 tempProj.exe: Program.cs
-	dotnet new console -n tempProj; \
-	cd tempProj; \
-	cp ../Program.cs .; \
-	dotnet publish -r win-x64 -c Release -o . --no-self-contained; \
-	cp tempProj.* ../; \
-	cd ..; \
+	dotnet new console -n tempProj && \
+	cd tempProj && \
+	cp ../Program.cs . && \
+	dotnet publish -r win-x64 -c Release -o . --no-self-contained && \
+	cp tempProj.* ../ && \
+	cd .. && \
 	rm -rf tempProj
 
 dllrun.exe: dllrun.c 
@@ -22,8 +22,8 @@ run: all
 
 clear: clean
 clean:
-	rm -rf dll.dll
-	rm -rf dllrun.exe
+	rm -f dll.dll
+	rm -f dllrun.exe
 	rm -rf tempProj.*
 
 .PHONY: all run clear clean
